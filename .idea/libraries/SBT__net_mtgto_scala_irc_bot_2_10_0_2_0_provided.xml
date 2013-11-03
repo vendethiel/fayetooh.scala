@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: net.mtgto:scala-irc-bot_2.10:0.2.0:provided">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/net.mtgto/scala-irc-bot_2.10/jars/scala-irc-bot_2.10-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/net.mtgto/scala-irc-bot_2.10/docs/scala-irc-bot_2.10-0.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/net.mtgto/scala-irc-bot_2.10/srcs/scala-irc-bot_2.10-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
