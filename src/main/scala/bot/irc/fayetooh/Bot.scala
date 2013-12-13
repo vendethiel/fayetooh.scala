@@ -6,9 +6,22 @@ import net.mtgto.irc.event._
 class Bot extends BaseBot {
   val commandSymbol = "."
 
+  val commands = Seq(
+    new Command.Say
+  )
+
   override def onMessage(client: Client, message: Message) {
+    val level = 0
+
     if (!message.text.startsWith(commandSymbol)) return
     val cmd = message.text.split(" ")(0).substring(commandSymbol.length)
-    client.sendNotice(message.channel, s"You issued command $cmd.")
+    val Array(name, params @ _*) = cmd.split(" ", 2)
+    for (
+      command <- commands
+      if command.name == name
+      if level >= command.minLevel
+    ) {
+      command(client, params)
+    }
   }
 }

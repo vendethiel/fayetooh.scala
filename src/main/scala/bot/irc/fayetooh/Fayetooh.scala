@@ -5,7 +5,7 @@ import net.mtgto.irc.config.BotConfig
 
 object Fayetooh {
   def main(args:Array[String]) {
-    initBot()
+    initBot
   }
 
   def initBot() {
