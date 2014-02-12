@@ -7,7 +7,7 @@ class Bot extends BaseBot {
   val commandSymbol = "."
 
   val commands = Seq(
-    new Command.Say
+    new Command.SayHello
   )
 
   override def onMessage(client: Client, message: Message) {
@@ -20,8 +20,9 @@ class Bot extends BaseBot {
       command <- commands
       if command.name == name
       if level >= command.minLevel
+      if command.args contains params.length
     ) {
-      command(client, params)
+      command(client, message, params)
     }
   }
 }

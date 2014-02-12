@@ -7,7 +7,7 @@ organization := "bot.irc.fayetooh"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.10.3"
 
 mainClass in (Compile, packageBin) := Some("bot.irc.fayetooh.Fayetooh")
 
@@ -31,7 +31,23 @@ libraryDependencies := Seq(
 */
 )
 
-scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-encoding", "UTF8")
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding", "UTF-8",       // yes, this is 2 args
+  "-feature",
+  "-language:existentials",
+  "-language:experimental.macros",
+  "-language:higherKinds",
+  "-language:implicitConversions",
+  "-unchecked",
+  "-Xfatal-warnings",
+  "-Xlint",
+  "-Yno-adapted-args",
+  "-Ywarn-all",
+  "-Ywarn-dead-code",        // N.B. doesn't work well with the ??? hole
+  "-Ywarn-numeric-widen",
+  "-Ywarn-value-discard"
+)
 
 scalaSource in run <<= baseDirectory(_ / "src")
 
