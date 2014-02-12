@@ -8,10 +8,10 @@ object Fayetooh {
     initBot
   }
 
-  def initBot() {
+  def initBot() { // @TODO move outside here
     println("Starting the bot.")
-    new Config {
-      val hostname = "irc.example.com"
+    val config = new Config {
+      val hostname = "irc.freenode.net"
       val port = 6667
       val password = None
       val encoding = "utf-8"
@@ -19,9 +19,9 @@ object Fayetooh {
       val timerDelay = 60000
       val nickname = "scala-irc-bot"
       val username = "scala-irc-bot"
-      val realname = "sd@example.com"
+      val realname = "scala@irc.bot"
       // channels
-      val channels = Array("#livescript")
+      val channels = Array("#faytest")
       // bots
       val bots = Array[(String, Option[BotConfig])](
         ("bot.irc.fayetooh.Bot", None)
